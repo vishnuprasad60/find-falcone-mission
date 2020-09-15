@@ -1,0 +1,27 @@
+<img src="../../../assets/planets.png" class="rounded mx-auto d-block mt-5" alt="Responsive image" width="73%">
+ <ng-container *ngIf="resultResponse; else noResultTemplate">
+    <div class="col-md-3 offset-md-4 mt-5">
+        <h3>{{resultResponse}}</h3>
+    </div>
+    <div *ngIf="planetSpotted; else failureTemplate" class="col-md-6 offset-md-3">
+        <h3>Queen Al Falcone spotted on planet {{planetSpotted}}</h3>
+    </div>
+    <ng-template #failureTemplate>
+        <div class="col-md-4 offset-md-4">
+            <h3>Please try again!!</h3>
+        </div>
+    </ng-template>
+    <div class="col-md-8 offset-md-2 mt-5 row">
+        <div class="col-md-2 offset-md-2">
+            <a [routerLink]= "['/']" routerLinkActive="active" class="proceed">Back to Home</a>
+        </div>
+        <div class="col-md-2 offset-md-2">
+            <a (click) = "retry()" class="proceed">Retry</a>
+        </div>
+    </div>
+</ng-container>
+<ng-template #noResultTemplate>
+    <div class="col-md-4 offset-md-4 mt-5">
+        <h4>Loading result...</h4>
+    </div>
+</ng-template>

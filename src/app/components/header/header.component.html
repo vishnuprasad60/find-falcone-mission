@@ -1,0 +1,23 @@
+<!-- <nav>
+    <ul>
+      <li><a [routerLink]= "['/mission']" routerLinkActive="active">Reset</a></li>
+      <li><a [routerLink]= "['/']" routerLinkActive="active">Home</a></li>
+    </ul>
+  </nav> -->
+
+<!--Navbar-->
+<div>
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+    <mdb-navbar-brand><a class="navbar-brand" href="#"></a></mdb-navbar-brand>
+    <links>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a [routerLink]= "['/']" routerLinkActive="active" class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]= "['/mission']" routerLinkActive="active" class="nav-link waves-light" mdbWavesEffect>Missions</a>
+            </li>
+        </ul>
+    </links>
+</mdb-navbar>
+</div>

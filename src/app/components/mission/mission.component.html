@@ -1,0 +1,39 @@
+<ng-container *ngIf="confirm; else missionTemplate">
+    <app-result [selectedVehicles]="selectedVehicles" [selectedPlanets]="selectedPlanets"></app-result>
+</ng-container>
+<ng-template #missionTemplate>
+    <ng-container *ngIf="vehicles; else loadingTemplate">
+        <div class="col-md-8 offset-md-2">
+            <div *ngIf="planets" class="mt-5 row">
+                <div *ngFor='let in of counter(totalMissions) ;let i = index'>
+                    <div class="col-md-3">
+                        <app-destination [data]="planets" [id]="i" (eventEmitter)="onSelectPlanet($event)"></app-destination>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 offset-md-2">
+            <div *ngIf="vehicles" class="mt-5 row col-md-12">
+                <div *ngFor='let in of counter(totalMissions) ;let i = index' class="col-md-3">
+                    <app-vehicle [vehicles]="vehicles" [id]="i" [speed]="speed" (eventEmitter)="onSelectVehicle($event)"></app-vehicle>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 offset-md-4 mt-5">
+            <h4>Estimated Time : {{speed}}</h4>
+        </div>
+        <div class="col-md-4 offset-md-4 mt-5 row">
+            <div class="col-md-2 offset-md-1">
+                <button class="btn btn-primary" (click)="resetData()" >Reset</button>
+            </div>
+            <div class="col-md-2 offset-md-2">
+                <button class="btn btn-primary" (click)="findResult()" >Submit</button>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #loadingTemplate>
+        <div class="col-md-4 offset-md-4 mt-5">
+            <h4>Loading...</h4>
+        </div>
+    </ng-template>    
+</ng-template>

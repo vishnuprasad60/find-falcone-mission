@@ -6,6 +6,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+From the landing page, user gets navigated to mission page, where user has to first select the planets of his choice, followed by the desired vehicles, one by one. Result is calculated and displayed on clicking submit for valid input. Notiications are displayed for invalid input.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.

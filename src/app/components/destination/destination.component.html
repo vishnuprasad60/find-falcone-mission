@@ -1,0 +1,10 @@
+<div *ngIf="data">
+<mat-form-field appearance="fill">
+  <mat-label>Select Destination</mat-label>
+  <mat-select (selectionChange)="onSelect($event.value)">
+    <mat-option *ngFor="let dest of data" [value]="dest.name">
+      {{dest.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
